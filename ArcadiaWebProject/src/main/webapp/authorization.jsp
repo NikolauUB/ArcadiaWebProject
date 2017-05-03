@@ -25,7 +25,7 @@
 
     // FirebaseUI config.
     var uiConfig = {
-        signInSuccessUrl: "http://localhost:8080/report_designer",
+        signInSuccessUrl: "/report_designer",
         signInOptions: [
             // Leave the lines as is for the providers you want to offer your users.
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -35,7 +35,7 @@
             firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
-        tosUrl: "http://localhost:8080/report_designer"
+        tosUrl: "/report_designer"
     };
 
     // Initialize the FirebaseUI Widget using Firebase.
@@ -49,7 +49,7 @@
             console.log(user.email);
             console.log(user.displayName);
             console.log(uiConfig);
-            uiConfig.signInSuccessUrl = "http://localhost:8080/report_designer?displayName=" + user.displayName + "&email=" + user.email;}
+            uiConfig.signInSuccessUrl = "/report_designer?displayName=" + user.displayName + "&email=" + user.email;}
         else{
             console.log("pain");
         }

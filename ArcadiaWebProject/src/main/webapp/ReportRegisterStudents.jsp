@@ -61,7 +61,7 @@
                 </div>
                 <p>Number of students who have registered for a period of time:</p>
                 <p> Date Range:</p>
-                <form name="report1_form" id="report1_form" method="get" action="http://localhost:8080/report_1">
+                <form name="report1_form" id="report1_form" method="get" action="/report_1">
                     <div>
                         <h5>Date1</h5>
                     </div>

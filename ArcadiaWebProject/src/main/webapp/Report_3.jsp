@@ -54,7 +54,7 @@
                 <h3>Select the report components:</h3>
               </div>
 
-              <form name="report3_form" method="get" action="http://localhost:8080/report_3">
+              <form name="report3_form" method="get" action="/report_3">
 
 
                 <div>

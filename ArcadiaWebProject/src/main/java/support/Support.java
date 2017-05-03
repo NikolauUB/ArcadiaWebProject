@@ -1,11 +1,13 @@
 package support;
 
 import firebase_communication.Collection;
+import firebase_communication.DBConnector;
 import pdf_creator.PdfCreator;
 import xml_creator.XmlCreator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -47,14 +49,14 @@ public class Support implements Constants{
     private void addFileToResponse(HttpServletResponse response,
                                    String fileName, String typeFile) throws ServletException, IOException {
 
-        File my_file = new File(ABSOLUTE_PATH + fileName);
+        File my_file = new File(Constants.userDir + "\\" + fileName);
 
         // Make sure to show the download dialog
         response.setHeader("Content-disposition", "attachment; filename=" + fileName);
         response.setHeader("Content-Type", typeFile + ";charset=UTF-8");
         response.setHeader("Content-Length", String.valueOf(my_file.length()));
 
-        Path p = Paths.get(ABSOLUTE_PATH + fileName);
+        Path p = Paths.get(Constants.userDir + "\\" + fileName);
         response.getOutputStream().write(Files.readAllBytes(p));
     }
 

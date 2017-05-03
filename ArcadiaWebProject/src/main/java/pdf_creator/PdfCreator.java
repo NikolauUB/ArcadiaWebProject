@@ -6,10 +6,12 @@ import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
+
 import firebase_communication.Collection;
 import pdf_creator.tableCreator.easytable.*;
 
 import javax.xml.soap.Text;
+
 import java.awt.*;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -20,6 +22,7 @@ import java.util.Date;
 import java.util.List;
 
 import static pdf_creator.tableCreator.easytable.Cell.HorizontalAlignment.*;
+import support.Constants;
 
 public class PdfCreator {
     private Integer pageCounter;
@@ -76,7 +79,7 @@ public class PdfCreator {
             if (document != null) {
                 // Saving the document
                 //  document.save("src\\main\\java\\support\\pdf_creator\\reports\\" + FILE_data) ;
-                String savePAth = System.getProperty("user.dir");
+                String savePAth = Constants.userDir;
                 document.save( savePAth + "\\" + FILE_data) ;
                 //Closing the document
                 document.close() ;
@@ -137,9 +140,7 @@ public class PdfCreator {
         writeText( document, page, date, 12, textCursor);
 
         // Insert logo
-        this.getClass().getClassLoader().getResourceAsStream("logo.png");
-        insertImage(document, page, System.getProperty("user.dir") + "\\logo.png", textCursor);
-        //insertImage(document, page, ".\\resources\\images\\logo.png", textCursor);
+        insertImage(document, page, this.getClass().getClassLoader().getResource("\\images\\logo.png").getPath(), textCursor);
 
         writePageNumber( document, page, pageCounter.toString(), 12);
     }

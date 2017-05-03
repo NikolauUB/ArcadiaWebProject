@@ -50,6 +50,11 @@
     </dependencies>
 
     <build>
+    	<resources>
+     		<resource>
+       			<directory>resources</directory>
+     		</resource>
+   		</resources>
         <plugins>
 
             <plugin>
@@ -58,6 +63,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <wtpContextName>ArcadiaWebProject-1.0-SNAPSHOT</wtpContextName>
                 </configuration>
             </plugin>
 

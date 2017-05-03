@@ -55,7 +55,7 @@
                  <!--    <h3>Select the report components:</h3>-->
                   </div>
                 <!--    <p>Rating of groups:</p>-->
-                  <form name="report4_form" method="get" action="http://localhost:8080/report_4">
+                  <form name="report4_form" method="get" action="/report_4">
 
                    <!-- <div>
                       <h5>Course:</h5>

@@ -55,7 +55,7 @@
                   <!--   <h3>Select the report components:</h3> -->
               </div>
                 <!--    <p>Number of tests in the course:</p> -->
-              <form name="report5_form" method="get" action="http://localhost:8080/report_5">
+              <form name="report5_form" method="get" action="/report_5">
             <!--     <div>
                   <h5>Course:</h5>
                 </div>

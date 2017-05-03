@@ -14,7 +14,7 @@ public class DBConnector {
 
     // connection initialization with "Constants.jsonFilename" to "Constants.firebaseServer" Firebase server
     public synchronized static void init() throws FileNotFoundException {
-        FileInputStream serviceAccount = new FileInputStream(Constants.ABSOLUTE_PATH + Constants.jsonFilename);
+        FileInputStream serviceAccount = new FileInputStream(DBConnector.class.getClassLoader().getResource(Constants.jsonFilename).getPath());
 
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredential(FirebaseCredentials.fromCertificate(serviceAccount))
